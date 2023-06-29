@@ -10,23 +10,13 @@
     <h1>Client-side AJAX </h1>
     <button id="updateButton" onclick="updateContent()">Vote</button>
 
-    <script>
-      function updateContent() {
-        const updateButton = document.getElementById('updateButton');
-        let date = new Date();
-        updateButton.textContent = `Your vote accepted: ${date}`;
+    <button onclick="loadAuthors()">Load Authors</button>
 
-        fetch('/getData')
-          .then((response) => response.text())
-          .then((data) => {
-            updateButton.textContent = `Your vote accepted: ${date}`;
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-            updateButton.textContent = 'Error occurred';
-          });
-      }
+    <h2 > Author List</h2>
+    <ul id="authorList">
 
-</script>
+    </ul>
+
+    <script src = "app.js"></script>
 </body>
 </html>
